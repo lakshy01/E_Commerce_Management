@@ -1,0 +1,121 @@
+#include<bits/stdc++.h> 
+#include<queue>
+#include<vector>
+using namespace std;
+class item{
+	string brand;
+	int price;
+	public:
+		item(string s,int p){
+			brand=s;
+			price=p;
+		}
+		string getbrand(){
+			return brand;
+		}
+		int getprice(){
+			return price;
+		}
+};
+void Print(queue<item>q){
+	while(!q.empty()){
+		item i=q.front();
+		cout<<i.getbrand()<<"-->"<<i.getprice()<<endl;
+		q.pop();
+	}
+	cout<<endl;
+}
+void clean(queue<item>q){
+	while(!q.empty()){
+		q.pop();
+	}
+}
+class Selection{
+	queue<item>desired;
+    queue<item>undesired;
+	queue<item>replica;
+	public:
+	void select_brand(vector<item>original,int n,string brand,string choice){
+        if(choice=="NO"){
+        	cout<<"THIS BRAND AVAILABE RELATED TO THE OBJECTS : "<<endl;
+        	for(int i=0;i<n;i++){
+        		replica.push(original[i]);
+			}
+			Print(replica);
+		}
+		if(choice=="YES"){
+		    for(int i=0;i<n;i++){
+		        replica.push(original[i]);
+		    }
+		    while(!replica.empty()){
+		        item store=replica.front();
+		        replica.pop();
+		        if(store.getbrand()==brand){
+		            desired.push(store);
+		        }
+		        else{
+		            undesired.push(store);
+		        }
+		    }
+		    Print(desired);
+		    clean(undesired);
+	    }
+	}		
+};
+int main(){
+	item i1("Titan",100);
+	item i2("Timex",300);
+	item i3("Titan",200);
+	item i4("Timex",500);
+	item i5("Titan",400);
+	item i6("Timex",700);
+	item i7("Fastrack",600);
+	item i8("Timex",900);
+	item i9("Titan",800);
+	item i10("Timex",1100);
+	item i11("Fastrack",1000);
+	item i12("Casio",1300);
+	item i13("Timex",1200);
+	item i14("Titan",1500);
+	item i15("Timex",1400);
+	item i16("Titan",1700);
+	item i17("Fastrack",1600);
+	item i18("Timex",1900);
+	item i19("Titan",1800);
+	item i20("Timex",2100);
+	item i21("Casio",2000);
+	item i22("Casio",2300);
+	item i23("Fossil",2200);
+	item i24("Fossil",2500);
+	vector<item>original;
+	original.push_back(i1);
+	original.push_back(i2);
+	original.push_back(i3);
+	original.push_back(i4);
+	original.push_back(i5);
+	original.push_back(i6);
+	original.push_back(i7);
+	original.push_back(i8);
+	original.push_back(i9);
+	original.push_back(i10);
+	original.push_back(i11);
+	original.push_back(i12);
+	original.push_back(i13);
+	original.push_back(i14);
+	original.push_back(i15);
+	original.push_back(i16);
+	original.push_back(i17);
+	original.push_back(i18);
+	original.push_back(i19);
+	original.push_back(i20);
+	original.push_back(i21);
+	original.push_back(i22);
+	original.push_back(i23);
+	original.push_back(i24); 
+	Selection s1;
+	string s;
+	cin>>s;
+	int r=original.size();
+    s1.select_brand(original,r,s,"YES");
+	return 0;
+}
