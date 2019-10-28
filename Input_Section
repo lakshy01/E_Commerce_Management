@@ -52,8 +52,22 @@ int main(){
 	original.push_back(i24); 
 	
 	
+	// BRAND FILTER
 	
-        // TYPE FILTER
+	Selection s1;
+	string BRAND;
+	cout<<" ENTER THE BRAND YOU WANT TO SEE : "<<endl;
+	cout<<" --------------------------------- "<<endl;
+	cin>>BRAND;
+	int r=original.size();
+	string c;
+	cout<<" ENTER THE CHOICE WHETHER YOU WANT TO SEE PARTICULAR BRAND THAT YOU HAVE GIVEN AS INPUT "<<endl;
+	cout<<" -------------------------------------------------------------------------------------- "<<endl;
+	cin>>c2;
+        s1.select_brand(original,r,BRAND,c2);
+	
+        
+	// TYPE FILTER
 	
 	Selection s2;
 	string type;
