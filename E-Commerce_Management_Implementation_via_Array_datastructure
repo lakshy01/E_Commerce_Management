@@ -139,6 +139,7 @@ class User_demand{
 		}
 };
 int main(){
+	
 	item item1("Allensolly",100,"Casual","Bigbazzar");
 	item item2("Allensolly",200,"Formal","Sadarbazaar");
 	item item3("Allensolly",300,"Formal","Bigbazzar");
@@ -147,23 +148,11 @@ int main(){
 	item item6("Pantaloon",500,"Formal","Bigapple");
 	
 	int r=1;
-//	vector<item>ar;
-//	ar.push_back(item1);
 	item ar[6]={item1,item2,item3,item4,item5,item6};
-//    ar.push_back(item2);
-//    ar.push_back(item3);
-//    ar.push_back(item4);
-//    ar.push_back(item5);
-//    ar.push_back(item6);
 	item new_item_temporary_brand[6]={item1,item2,item3,item4,item5,item6};
 	
-//	vector<item>new_item_temporary_brand;
-//	new_item_temporary_brand.push_back(item1);
-//	new_item_temporary_brand.push_back(item2);
-//	new_item_temporary_brand.push_back(item3);
-//	new_item_temporary_brand.push_back(item4);
-//	new_item_temporary_brand.push_back(item5);
-//	new_item_temporary_brand.push_back(item6);
+	// Brand_Filter
+	
 	User_demand user;
 	string brand="Pantaloon";
 	int k=0;
@@ -171,24 +160,18 @@ int main(){
 	user.select_brand(ar,new_item_temporary_brand,brand,size,k,r);
 	cout<<endl;
 	
-	
+	// Price_Filter
 	
 	User_demand user1;
 	int max=600;
 	int min=400;
 	item new_item_temporary_price[6]={item1,item2,item3,item4,item5,item6};
-//	vector<item>new_item_temporary_price;
-//	new_item_temporary_price.push_back(item1);
-//	new_item_temporary_price.push_back(item2);
-//	new_item_temporary_price.push_back(item3);
-//	new_item_temporary_price.push_back(item4);
-//	new_item_temporary_price.push_back(item5);
-//	new_item_temporary_price.push_back(item6);
 	int option=1;
 	user1.select_price(new_item_temporary_brand,new_item_temporary_price,ar,max,min,k,option,r);
 	cout<<endl;
 	
 	
+	// Type_Filter
 	
 	User_demand user2;
 	int p=0;
@@ -198,12 +181,13 @@ int main(){
 	cout<<endl;
 	
 	
-	
+	// Seller_Filter
 	
 	User_demand user3;
 	int d=0;
 	string selected_seller="Bigbazzar";
 	item new_item_temporary_seller[6]={item1,item2,item3,item4,item5,item6};
 	user2.select_seller(ar,new_item_temporary_type,new_item_temporary_seller,selected_seller,size,p,d,r);
+	
 	return 0;
 }
