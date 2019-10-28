@@ -2,6 +2,9 @@
 #include<queue>
 #include<vector>
 using namespace std;
+
+// Node Structure
+
 class node{
 	public:
 		int data;
@@ -10,6 +13,9 @@ class node{
 		node(int d):data(d),left(NULL),right(NULL){
 		}
 };
+
+// BST implementation
+
 node* InsertInBst(node* root,int data){
 	if(root==NULL){
 		root=new node(data);
@@ -23,6 +29,7 @@ node* InsertInBst(node* root,int data){
 	}
 	return root;
 }
+
 node* CreateTree(vector<int>v){
 	node* root=NULL;
 	for(int i=0;i<v.size();i++){
@@ -30,6 +37,7 @@ node* CreateTree(vector<int>v){
 	}
 	return root;
 }
+
 node* SearchInBst(node* root,int key){
 	if(root==NULL){
 		return NULL;
@@ -44,6 +52,7 @@ node* SearchInBst(node* root,int key){
 		return SearchInBst(root->right,key);
 	}
 }
+
 class item{
 	string brand;
 	int price;
@@ -72,12 +81,7 @@ void clean(queue<item>q){
 		q.pop();
 	}
 }
-//void PrintOriginal(vector<item>v){
-//	for (auto it = v.begin(); it != v.end(); it++){
-//        cout << *it <<" "; 
-//	}
-//	cout<<endl;
-//}
+
 int assign(string key){
 	if(key=="Titan"){
 		return 1;
@@ -95,6 +99,7 @@ int assign(string key){
 		return 5;
 	}
 }
+
 class Selection{
 	queue<item>desired;
     queue<item>undesired;
@@ -181,9 +186,10 @@ int main(){
 	}
 	node* root=CreateTree(v1);
 	Selection s1;
-	string s="Titan";
+	string s,c;
+	cin>>s>>c;
 	int p=assign(s);
 	int r=original.size();
-    s1.select_brand(original,v1,r,p,"YES",root);
+        s1.select_brand(original,v1,r,p,c,root);
 	return 0;
 }
