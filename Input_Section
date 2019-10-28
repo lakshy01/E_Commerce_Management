@@ -51,8 +51,26 @@ int main(){
 	original.push_back(i23);
 	original.push_back(i24); 
 	
-  
-  Selection s3;
+	
+	
+        // TYPE FILTER
+	
+	Selection s2;
+	string type;
+	cout<<" ENTER THE TYPE YOU WANT TO SEE : "<<endl;
+	cout<<" --------------------------------- "<<endl;
+	cin>>type;
+	int T=original.size();
+	string c1;
+	cout<<" ENTER THE CHOICE WHETHER YOU WANT TO SEE PARTICULAR TYPE THAT YOU HAVE GIVEN AS INPUT "<<endl;
+	cout<<" -------------------------------------------------------------------------------------- "<<endl;
+	cin>>c;
+        s2.select_type(original,T,type,c1);
+	
+	
+	// SELLER FILTER
+	
+        Selection s3;
 	string s;
 	cout<<" ENTER THE SELLER YOU WANT TO SEE : "<<endl;
 	cout<<" --------------------------------- "<<endl;
@@ -62,6 +80,6 @@ int main(){
 	cout<<" ENTER THE CHOICE WHETHER YOU WANT TO SEE PARTICULAR SELLER THAT YOU HAVE GIVEN AS INPUT "<<endl;
 	cout<<" -------------------------------------------------------------------------------------- "<<endl;
 	cin>>c;
-  s3.select_seller(original,r,s,c);
+        s3.select_seller(original,r,s,c);
 	return 0;
 }
