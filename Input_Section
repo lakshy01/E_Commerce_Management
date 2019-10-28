@@ -54,18 +54,33 @@ int main(){
 	
 	// BRAND FILTER
 	
-	Selection s1;
+	Selection s0;
 	string BRAND;
 	cout<<" ENTER THE BRAND YOU WANT TO SEE : "<<endl;
 	cout<<" --------------------------------- "<<endl;
 	cin>>BRAND;
 	int r=original.size();
-	string c;
+	string c2;
 	cout<<" ENTER THE CHOICE WHETHER YOU WANT TO SEE PARTICULAR BRAND THAT YOU HAVE GIVEN AS INPUT "<<endl;
 	cout<<" -------------------------------------------------------------------------------------- "<<endl;
 	cin>>c2;
-        s1.select_brand(original,r,BRAND,c2);
+        s0.select_brand(original,r,BRAND,c2);
 	
+	
+	// PRICE FILTER
+	
+	Selection s1;
+	int min,max;
+	cout<<" ENTER THE MIN AND MAX YOU WANT TO SEE : "<<endl;
+	cout<<" --------------------------------- "<<endl;
+	cin>>min>>max;
+	int p=original.size();
+	string c3;
+	cout<<" ENTER THE CHOICE WHETHER YOU WANT TO SEE PARTICULAR TYPE THAT YOU HAVE GIVEN AS INPUT "<<endl;
+	cout<<" -------------------------------------------------------------------------------------- "<<endl;
+	cin>>c3;
+        s1.select_type(original,p,min,max,c3);
+
         
 	// TYPE FILTER
 	
