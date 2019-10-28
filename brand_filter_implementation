@@ -57,8 +57,10 @@ class Selection{
 		            undesired.push(store);
 		        }
 		    }
-		    Print(desired);
 		    clean(undesired);
+		    cout<<" BRANDS AVALAIBLE : "<<endl;
+		    cout<<" ------------------ "<<endl;
+		    Print(desired);
 	    }
 	}		
 };
@@ -114,8 +116,14 @@ int main(){
 	original.push_back(i24); 
 	Selection s1;
 	string s;
+	cout<<" ENTER THE BRAND YOU WANT TO SEE : "<<endl;
+	cout<<" --------------------------------- "<<endl;
 	cin>>s;
 	int r=original.size();
-    s1.select_brand(original,r,s,"YES");
+	string c;
+	cout<<" ENTER THE CHOICE WHETHER YOU WANT TO SEE PARTICULAR BRAND THAT YOU HAVE GIVEN AS INPUT "<<endl;
+	cout<<" -------------------------------------------------------------------------------------- "<<endl;
+	cin>>c;
+        s1.select_brand(original,r,s,c);
 	return 0;
 }
