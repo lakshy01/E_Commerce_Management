@@ -1,3 +1,5 @@
+// Price_Filter
+
 void select_price(vector<item>original,int n,int max,int min,string choice){
 	if(choice=="NO"){
 	    for(int i=0;i<n;i++){
@@ -39,6 +41,7 @@ void select_price(vector<item>original,int n,int max,int min,string choice){
 		}	
 		clean(undesired);
 	    cout<<"PREVIOUS FILTER SELECTED THIS IS THE SECOND ONE :  "<<endl;
+	    cout<<"---------------------------------------------------"<<endl;
 	    Print(desired);
 	}
 }
