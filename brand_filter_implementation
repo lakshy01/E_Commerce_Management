@@ -5,9 +5,11 @@ using namespace std;
 class item{
 	string brand;
 	int price;
+	string type;
+	string seller;
 	public:
-		item(string s,int p){
-			brand=s;
+		item(string b,int p,string t,string s){
+			brand=b;
 			price=p;
 		}
 		string getbrand(){
@@ -15,6 +17,12 @@ class item{
 		}
 		int getprice(){
 			return price;
+		}
+		string gettype(){
+			return type;
+		}
+		string getseller(){
+			return seller;
 		}
 };
 void Print(queue<item>q){
@@ -64,66 +72,3 @@ class Selection{
 	    }
 	}		
 };
-int main(){
-	item i1("Titan",100);
-	item i2("Timex",300);
-	item i3("Titan",200);
-	item i4("Timex",500);
-	item i5("Titan",400);
-	item i6("Timex",700);
-	item i7("Fastrack",600);
-	item i8("Timex",900);
-	item i9("Titan",800);
-	item i10("Timex",1100);
-	item i11("Fastrack",1000);
-	item i12("Casio",1300);
-	item i13("Timex",1200);
-	item i14("Titan",1500);
-	item i15("Timex",1400);
-	item i16("Titan",1700);
-	item i17("Fastrack",1600);
-	item i18("Timex",1900);
-	item i19("Titan",1800);
-	item i20("Timex",2100);
-	item i21("Casio",2000);
-	item i22("Casio",2300);
-	item i23("Fossil",2200);
-	item i24("Fossil",2500);
-	vector<item>original;
-	original.push_back(i1);
-	original.push_back(i2);
-	original.push_back(i3);
-	original.push_back(i4);
-	original.push_back(i5);
-	original.push_back(i6);
-	original.push_back(i7);
-	original.push_back(i8);
-	original.push_back(i9);
-	original.push_back(i10);
-	original.push_back(i11);
-	original.push_back(i12);
-	original.push_back(i13);
-	original.push_back(i14);
-	original.push_back(i15);
-	original.push_back(i16);
-	original.push_back(i17);
-	original.push_back(i18);
-	original.push_back(i19);
-	original.push_back(i20);
-	original.push_back(i21);
-	original.push_back(i22);
-	original.push_back(i23);
-	original.push_back(i24); 
-	Selection s1;
-	string s;
-	cout<<" ENTER THE BRAND YOU WANT TO SEE : "<<endl;
-	cout<<" --------------------------------- "<<endl;
-	cin>>s;
-	int r=original.size();
-	string c;
-	cout<<" ENTER THE CHOICE WHETHER YOU WANT TO SEE PARTICULAR BRAND THAT YOU HAVE GIVEN AS INPUT "<<endl;
-	cout<<" -------------------------------------------------------------------------------------- "<<endl;
-	cin>>c;
-        s1.select_brand(original,r,s,c);
-	return 0;
-}
