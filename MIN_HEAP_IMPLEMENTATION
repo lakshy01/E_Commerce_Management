@@ -3,16 +3,16 @@
 using namespace std;
 
 class Minheap{
-	vector<int> v;
+	vector<item> v;
 
 	void heapify(int i){
 		   int min_index = i;
 		   int left_child = 2*i;
 		   int right_child = left_child + 1;
-		   if(left_child<v.size() && v[left_child]<v[min_index]){
+		   if(left_child<v.size() && v[left_child].getprice()<v[min_index].getprice()){
 			      min_index = left_child;
 		   }
-		   if(right_child<v.size() && v[right_child]<v[min_index]){
+		   if(right_child<v.size() && v[right_child].getprice()<v[min_index].getprice()){
 		 	     min_index = right_child;
 		   }
 
@@ -24,14 +24,15 @@ class Minheap{
 
 public:
 	 Minheap(){
-		  v.push_back(-1);
+	          item r("NULL",0,"NULL","NULL");
+		  v.push_back(r);
 	 }
 
-	void push(int data){
+	void push(item data){
 		  v.push_back(data);
 		  int index = v.size()-1;
 		  int parent = index/2;
-		  while(index>1 && v[index]<v[parent]){
+		  while(index>1 && v[index].getprice()<v[parent].getprice()){
 			      swap(v[index],v[parent]);
 			      index = parent;
 			      parent = parent/2;
