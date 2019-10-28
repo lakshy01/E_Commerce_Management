@@ -79,7 +79,7 @@ int main(){
 	cout<<" ENTER THE CHOICE WHETHER YOU WANT TO SEE PARTICULAR TYPE THAT YOU HAVE GIVEN AS INPUT "<<endl;
 	cout<<" -------------------------------------------------------------------------------------- "<<endl;
 	cin>>c3;
-        s1.select_type(original,p,min,max,c3);
+        s1.select_type(original,p,max,min,c3);
 
         
 	// TYPE FILTER
