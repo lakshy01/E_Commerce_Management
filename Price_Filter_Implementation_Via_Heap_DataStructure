@@ -9,11 +9,11 @@ void select_price(vector<item>original,int n,int max,int min,string choice){
 	    	item store=h.top();
 		    if(store.getprice()<=max){
 			    if(store.top().getprice()>=min){
-				    desired.push(store);
+				    desired.push_back(store);
 			    }
 		    }
 		    else{
-			    undesired.push(store);
+			    undesired.push_back(store);
 		    }
 		    h.pop();
 	    }
@@ -22,20 +22,19 @@ void select_price(vector<item>original,int n,int max,int min,string choice){
 	    Print(desired);
 	}
 	if(choice=="YES"){
-		while(!desired.empty()){
-			item r=desired.top();
-			h.push(r);
-			desired.pop();
+	        int size=desired.size();
+		for(int i=0;i<size;i++){
+		      h.push(desired[i])
 		}
 		while(!h.empty()){
 			item store=h.top();
 			if(store.getprice()<=max){
 				if(store.getprice()>=min){
-					desired.push(store);
+					desired.push_back(store);
 				}
 			}
 			else{
-				undesired.push(store);
+				undesired.push_back(store);
 			}
 			h.pop();
 		}	
