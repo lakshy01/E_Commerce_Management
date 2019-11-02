@@ -1,0 +1,28 @@
+class item{
+  string brand;
+  int id;
+  string model;
+  int price;
+  public:
+    item(string b,int i,string m,int p){
+        brand=b;
+        id=i;
+        model=m;
+        price=p;
+    }
+    string getbrand(){
+        return brand;
+    }
+    int getid(){
+        return id;
+    }
+    string getmodel(){
+        return model;
+    }
+    int getprice(){
+        return price;
+    }
+    void Print(){
+        cout<<brand<<"-->"<<model<<"-->"<<id<<"-->"<<price<<endl;
+    }
+};
