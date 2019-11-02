@@ -1,71 +1,37 @@
-#include<bits/stdc++.h> 
-#include<queue>
-#include<vector>
-using namespace std;
-class item{
-	string brand;
-	int price;
-  string type;
-	public:
-		item(string s,int p,string t){
-			brand=s;
-			price=p;
-      type=t;
-		}
-		string getbrand(){
-			return brand;
-		}
-		int getprice(){
-			return price;
-		}
-    string gettype(){
-      return type;
-    }
-};
-void Print(queue<item>q){
-	while(!q.empty()){
-		item i=q.front();
-		cout<<i.getbrand()<<"-->"<<i.getprice()<<endl;
-		q.pop();
-	}
-	cout<<endl;
-}
-void clean(queue<item>q){
-	while(!q.empty()){
-		q.pop();
-	}
-}
-class Selection{
-	queue<item>desired;
-    queue<item>undesired;
-	queue<item>replica;
-	public:
-	void select_type(vector<item>original,int n,string type,string choice){
+void Select_type(vector<item>original,int n,string type,string choice){
         if(choice=="NO"){
-        	cout<<"THIS type AVAILABE RELATED TO THE OBJECTS : "<<endl;
+        	cout<<"REQUIRED : "<<endl;
         	for(int i=0;i<n;i++){
-        		replica.push(original[i]);
-			}
-			Print(replica);
-		}
-		if(choice=="YES"){
-		    for(int i=0;i<n;i++){
-		        replica.push(original[i]);
-		    }
-		    while(!replica.empty()){
-		        item store=replica.front();
-		        replica.pop();
-		        if(store.gettype()==type){
-		            desired.push(store);
-		        }
-		        else{
-		            undesired.push(store);
-		        }
-		    }
-		    clean(undesired);
-		    cout<<" TYPES AVALAIBLE : "<<endl;
-		    cout<<" ------------------ "<<endl;
-		    Print(desired);
+        		original[i].Print();
+	        }
 	    }
-	}		
-};
+	    if(choice=="YES"){
+	        clean(desired);
+            int size=original.size();
+		    for(int i=0;i<size;i++){
+		        item store=original[i];
+		            if(store.gettype()==type){
+		                desired.push_back(store);
+		            }
+		            else{
+		                undesired.push_back(store);
+		            }
+		     }
+		     cout<<"REQUIRED DATABASE : "<<endl;
+		     cout<<"--------------------"<<endl;
+		     Print_desired(desired);
+		     cout<<"ANY PRIORITY : "<<endl;
+		     cout<<"---------------"<<endl;
+		     string t;
+		     cin>>t;
+		     if(t=="NO"){
+		          cout<<"---------------------------------"<<endl;
+		     }
+		     else{
+		          cout<<"ENTER YOUR FEEDBACK : "<<endl;
+		          string t;
+		          cin>>t;
+		          cout<<t<<endl;
+	          }
+	    }
+    }
