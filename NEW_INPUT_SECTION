@@ -1,0 +1,60 @@
+int main(){
+    item i1("titan",key("titanmodel1"),"titanmodel1",500);
+    item i2("timex",key("timexmodel1"),"timexmodel1",700);
+    item i3("fastrack",key("fastrackmodel1"),"fastrackmodel1",300);
+    item i4("gshock",key("gshockmodel1"),"gshockmodel1",800);
+    item i5("titan",key("titanmodel2"),"titanmodel2",200);
+    item i6("titan",key("titanmodel3"),"titanmodel3",600);
+    item i7("titan",key("titanmodel4"),"titanmodel4",100);
+    item i8("titan",key("titanmodel5"),"titanmodel5",400);
+    item i9("titan",key("titanmodel6"),"titanmodel6",900);
+    item i10("timex",key("timexmodel2"),"timexmodel2",1100);
+    item i11("fastrack",key("fastrackmodel2"),"fastrackmodel2",1200);
+    item i12("gshock",key("gshockmodel2"),"gshockmodel2",1000);
+    item i13("timex",key("timexmodel3"),"timexmodel3",1300);
+    
+    vector<item>original;
+	original.push_back(i1);
+	original.push_back(i2);
+	original.push_back(i3);
+	original.push_back(i4);
+	original.push_back(i5);
+	original.push_back(i6);
+	original.push_back(i7);
+	original.push_back(i8);
+	original.push_back(i9);
+	original.push_back(i10);
+	original.push_back(i11);
+	original.push_back(i12);
+	original.push_back(i13);
+	
+	//brand FILTER
+    Selection s1;
+    string brandb,modelm,reply;
+    cout<<"Enter brand name: ";
+    cin>>brandb;
+    cout<<endl<<"---------------------";
+    cout<<endl<<"Enter model name: ";
+    cin>>modelm;
+    cout<<endl<<"--------------------";
+    cout<<endl<<"Do you want to see the whole data or just the values that you have given? (YES/NO)";
+    cout<<endl<<"********( Case sensitive: HAVE TO GIVE THE REPLY AS PER THE OPTION GIVEN )***********"<<endl;
+    cin>>reply;
+    s1.Select_Brand(original,13,modelm,brandb,reply);
+    
+    // Price FILTER
+    Selection s2;
+    int max,min;
+    cout<<"Enter the min limit : "<<endl;
+    cin>>min;
+    cout<<"---------------------  "<<endl;
+    cout<<"Enter the max limit  : "<<endl;
+    cin>>max;
+    cout<<"-----------------------"<<endl;
+    string choice;
+    cout<<"Enter your choice : "<<endl;
+    cin>>choice;
+    cout<<"----------------------------"<<endl;
+    s2.Select_price(original,13,max,min,choice);
+    
+}
